@@ -1,0 +1,433 @@
+/* Color Theme Palettes */
+body.theme-green {
+    --bg-color: #000000;
+    --term-green: #00ff66;
+    --term-green-dim: #00aa44;
+    --term-green-dark: #003311;
+    --term-red: #ff3333;
+    --border-color: #00ff66;
+}
+
+body.theme-amber {
+    --bg-color: #000000;
+    --term-green: #ffb000;
+    --term-green-dim: #b37a00;
+    --term-green-dark: #332200;
+    --term-red: #ff3333;
+    --border-color: #ffb000;
+}
+
+body.theme-cyan {
+    --bg-color: #000000;
+    --term-green: #00e5ff;
+    --term-green-dim: #0099aa;
+    --term-green-dark: #002b33;
+    --term-red: #ff3333;
+    --border-color: #00e5ff;
+}
+
+body.theme-red {
+    --bg-color: #000000;
+    --term-green: #ff3333;
+    --term-green-dim: #aa2222;
+    --term-green-dark: #330000;
+    --term-red: #ff6666;
+    --border-color: #ff3333;
+}
+
+body.theme-purple {
+    --bg-color: #000000;
+    --term-green: #bf00ff;
+    --term-green-dim: #7f00aa;
+    --term-green-dark: #220033;
+    --term-red: #ff3333;
+    --border-color: #bf00ff;
+}
+
+body.theme-matrix {
+    --bg-color: #000000;
+    --term-green: #00ff00;
+    --term-green-dim: #008800;
+    --term-green-dark: #002200;
+    --term-red: #ff3333;
+    --border-color: #00ff00;
+}
+
+body.theme-blue {
+    --bg-color: #000000;
+    --term-green: #3399ff;
+    --term-green-dim: #2266aa;
+    --term-green-dark: #001133;
+    --term-red: #ff3333;
+    --border-color: #3399ff;
+}
+
+body.theme-white {
+    --bg-color: #000000;
+    --term-green: #ffffff;
+    --term-green-dim: #aaaaaa;
+    --term-green-dark: #222222;
+    --term-red: #ff3333;
+    --border-color: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--term-green);
+    font-family: var(--font-mono);
+    line-height: 1.5;
+    padding: 1.5rem;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    --font-mono: 'Courier New', Courier, monospace;
+}
+
+/* Faded Background Canvas */
+#matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+/* Container Layout */
+.terminal-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 15px var(--border-color);
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.90);
+    animation: fadeIn 0.4s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+
+/* Terminal Status Bar */
+.terminal-status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: var(--term-green-dim);
+    border-bottom: 1px dashed var(--term-green-dim);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Layout Split for Terminal + Sidebar */
+.terminal-main-layout {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.cli-section {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Sidebar Commands List */
+.commands-sidebar {
+    width: 250px;
+    background-color: var(--term-green-dark);
+    border: 1px solid var(--term-green-dim);
+    padding: 1rem;
+    flex-shrink: 0;
+    border-radius: 2px;
+}
+
+.sidebar-title {
+    font-weight: bold;
+    color: var(--term-green);
+    border-bottom: 1px dashed var(--term-green-dim);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.command-list {
+    list-style: none;
+    font-size: 0.8rem;
+    color: #ccffdd;
+}
+
+.command-list li {
+    margin-bottom: 0.5rem;
+}
+
+.command-list code {
+    color: var(--term-green);
+    background: transparent;
+    padding: 0;
+    border: none;
+}
+
+/* Header Banner */
+header {
+    border-bottom: none;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.header-animate {
+    animation: terminalSlideIn 0.6s cubic-bezier(0.1, 0.9, 0.2, 1) both;
+}
+
+.header-flex {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    overflow-x: auto;
+}
+
+.penguin-art {
+    font-family: var(--font-mono);
+    font-size: 0.4rem;
+    white-space: pre;
+    color: var(--term-green-dim);
+    line-height: 1.1;
+    flex-shrink: 0;
+}
+
+.ascii-art {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    white-space: pre;
+    color: var(--term-green);
+    line-height: 1.15;
+    letter-spacing: 0;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+#typewriter-ascii,
+#typewriter-penguin,
+#typewriter-ascii div,
+#typewriter-penguin div,
+#typewriter-ascii pre,
+#typewriter-penguin pre {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+.tagline {
+    color: var(--term-green-dim);
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-size: 0.9rem;
+    border-top: 1px dashed var(--term-green-dim);
+    border-bottom: 1px dashed var(--term-green-dim);
+    width: 100%;
+}
+
+/* Interactive Shell Section */
+.cli-box {
+    background-color: var(--term-green-dark);
+    border: 1px solid var(--term-green-dim);
+    padding: 0.75rem;
+    margin-bottom: 2rem;
+    border-radius: 2px;
+    animation: terminalSlideIn 0.5s cubic-bezier(0.1, 0.9, 0.2, 1) both;
+    animation-delay: 0.2s;
+}
+
+.cli-output-log {
+    max-height: 130px;
+    overflow-y: auto;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--term-green-dim);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--term-green-dim) var(--term-green-dark);
+}
+
+.cli-output-log::-webkit-scrollbar {
+    width: 4px;
+}
+.cli-output-log::-webkit-scrollbar-thumb {
+    background-color: var(--term-green-dim);
+}
+
+.cli-log-entry {
+    word-break: break-all;
+}
+
+.cli-input-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.prompt-symbol {
+    color: var(--term-green);
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+
+.cli-input {
+    background: transparent;
+    border: none;
+    color: var(--term-green);
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    width: 100%;
+    outline: none;
+}
+
+/* Post Entry Styling */
+.post {
+    border: 1px solid var(--term-green-dark);
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    background-color: #020b04;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    animation: terminalSlideIn 0.5s cubic-bezier(0.1, 0.9, 0.2, 1) both;
+    animation-delay: 0.4s;
+}
+
+.post:focus, .post.selected {
+    border-color: var(--term-green);
+    box-shadow: 0 0 10px var(--border-color);
+}
+
+.post:hover {
+    border-color: #ffffff;
+    box-shadow: 0 0 12px var(--border-color);
+}
+
+.post-header {
+    cursor: pointer;
+    user-select: none;
+}
+
+.post-meta-line {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.4rem;
+}
+
+.toggle-icon {
+    font-weight: bold;
+    color: var(--term-green);
+    margin-right: 0.2rem;
+}
+
+.post-title {
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: var(--term-green);
+    margin-top: 0.2rem;
+    transition: color 0.15s ease;
+}
+
+.post-header:hover .post-title {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.post-date {
+    font-size: 0.8rem;
+    color: var(--term-green-dim);
+    margin-left: auto;
+}
+
+.badge {
+    background-color: var(--term-green-dark);
+    border: 1px solid var(--term-green);
+    color: var(--term-green);
+    padding: 0.1rem 0.4rem;
+    font-size: 0.75rem;
+}
+
+.post .post-body {
+    display: none;
+    margin-top: 1rem;
+    border-top: 1px dashed var(--term-green-dark);
+    padding-top: 1rem;
+}
+
+.post.expanded .post-body {
+    display: block;
+}
+
+.post-body h3 {
+    color: var(--term-green-dim);
+    margin: 1rem 0 0.4rem 0;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.post-body p {
+    font-size: 0.9rem;
+    color: #ccffdd;
+    margin-bottom: 0.8rem;
+}
+
+code, pre {
+    font-family: var(--font-mono) !important;
+    border-radius: 0 !important;
+}
+
+p code {
+    background-color: var(--term-green-dark);
+    color: var(--term-green);
+    padding: 0.1rem 0.3rem;
+    border: 1px solid var(--term-green-dim);
+}
+
+pre {
+    background-color: #051409 !important;
+    border: 1px solid var(--term-green-dim) !important;
+    padding: 0.75rem !important;
+    overflow-x: auto;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes terminalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    margin-top: 2rem;
+    text-align: center;
+    border-top: 1px dashed var(--border-color);
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    color: var(--term-green-dim);
+    animation: fadeIn 0.5s ease-in-out both;
+    animation-delay: 0.6s;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thread+Threat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-green">
+    <canvas id="matrix-bg"></canvas>
+    <div class="terminal-container">
+        <div class="terminal-status-bar">
+            <span id="status-theme">THEME: GREEN</span>
+            <span id="status-time">UTC: --:--:--</span>
+            <span id="status-uptime">UPTIME: 00:00</span>
+            <span id="status-ping">PING: 14MS</span>
+        </div>
+
+        <header class="header-animate">
+            <div class="header-flex">
+                <div id="typewriter-penguin" class="penguin-art"></div>
+                <div id="typewriter-ascii" class="ascii-art"></div>
+            </div>
+            <div id="typewriter-text" class="tagline"></div>
+        </header>
+
+        <div class="terminal-main-layout">
+            <div class="cli-section">
+                <div class="cli-box">
+                    <div id="cli-output-log" class="cli-output-log">
+                        <div class="cli-log-entry">Type 'help' for available commands. Use [Tab] to autocomplete, [Up/Down] for history.</div>
+                    </div>
+                    <div class="cli-input-wrapper">
+                        <span class="prompt-symbol">&gt;</span>
+                        <input type="text" id="cli-input" class="cli-input" autofocus autocomplete="off">
+                    </div>
+                </div>
+
+                <main>
+                    <article class="post" id="post-001" tabindex="0" data-id="001">
+                        <div class="post-header">
+                            <div class="post-meta-line">
+                                <span class="toggle-icon">[+]</span>
+                                <span class="badge">MEXICAN-GOV-AI</span>
+                                <span class="post-date">02/15/2026</span>
+                            </div>
+                            <h2 class="post-title">Mexican Government Agency Breach</h2>
+                        </div>
+                        <div class="post-body">
+                            <h3>Overview</h3>
+                            <p>A lone operator used commercial artificial intelligence assistants to automate a multi-agency intrusion across nine government databases.</p>
+                            <h3>Root Cause</h3>
+                            <p>The attacker bypassed system guardrails using social engineering frameworks, allowing large language models to generate roughly seventy five percent of the remote commands and exploitation scripts.</p>
+                            <h3>Mitigation</h3>
+                            <p>Implement strict prompt guardrails for AI tools and enforce strict egress filtering on API query infrastructure.</p>
+                        </div>
+                    </article>
+
+                    <article class="post" id="post-002" tabindex="0" data-id="002">
+                        <div class="post-header">
+                            <div class="post-meta-line">
+                                <span class="toggle-icon">[+]</span>
+                                <span class="badge">STRIKER-SABOTAGE</span>
+                                <span class="post-date">03/04/2026</span>
+                            </div>
+                            <h2 class="post-title">Stryker Corporation Sabotage</h2>
+                        </div>
+                        <div class="post-body">
+                            <h3>Overview</h3>
+                            <p>An Iran linked group named Handala targeted Microsoft based enterprise infrastructure to execute industrial sabotage.</p>
+                            <h3>Root Cause</h3>
+                            <p>Attackers abused valid administrative device management tools to trigger simultaneous factory resets across 200000 corporate devices in 79 countries without using file encryption.</p>
+                            <h3>Mitigation</h3>
+                            <p>Secure administrative console access with multi factor authentication and monitor bulk management commands closely.</p>
+                        </div>
+                    </article>
+
+                    <article class="post" id="post-003" tabindex="0" data-id="003">
+                        <div class="post-header">
+                            <div class="post-meta-line">
+                                <span class="toggle-icon">[+]</span>
+                                <span class="badge">SINGAPORE-ESPIONAGE</span>
+                                <span class="post-date">01/10/2026</span>
+                            </div>
+                            <h2 class="post-title">Singapore Telecom Espionage</h2>
+                        </div>
+                        <div class="post-body">
+                            <h3>Overview</h3>
+                            <p>A state sponsored Chinese cyber espionage group known as UNC3886 breached all four major telecommunications providers in Singapore.</p>
+                            <h3>Root Cause</h3>
+                            <p>The operation exploited perimeter firewall zero day vulnerabilities and deployed custom rootkits to maintain stealthy access inside core network infrastructure.</p>
+                            <h3>Mitigation</h3>
+                            <p>Apply edge device firmware patches immediately and conduct rigorous integrity checks on core router kernels.</p>
+                        </div>
+                    </article>
+                </main>
+            </div>
+
+            <aside class="commands-sidebar">
+                <div class="sidebar-title">COMMANDS</div>
+                <ul class="command-list">
+                    <li><code>help</code> - Show options</li>
+                    <li><code>list</code> - Index view</li>
+                    <li><code>cat [id]</code> - Open thread</li>
+                    <li><code>search [kw]</code> - Find thread</li>
+                    <li><code>pin [id]</code> - Bookmark thread</li>
+                    <li><code>pins</code> - List bookmarks</li>
+                    <li><code>copy [id]</code> - Copy thread code</li>
+                    <li><code>color [th]</code> - Change color</li>
+                    <li><code>clear</code> - Reset log</li>
+                    <li><code>about</code> - System info</li>
+                </ul>
+            </aside>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Thread+Threat. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
